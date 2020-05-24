@@ -41,7 +41,7 @@ Class SinglyLink{
         for ($i = 0; $i < $index; ++$i) $pred = $pred->next;
 
         $toAdd = new Node($val);
-        $toAdd = $pred->next;
+        $toAdd->next = $pred->next;
         $pred->next = $toAdd;
     }
 
