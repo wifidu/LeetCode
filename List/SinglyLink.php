@@ -24,7 +24,7 @@ Class SinglyLink{
 
         $curr = $this->head;
 
-        for ($i = 0; $i < $index; $i++) $curr = $curr->next;
+        for ($i = 0; $i < $index + 1; $i++) $curr = $curr->next;
 
         return $curr->val;
     }
@@ -67,3 +67,9 @@ Class SinglyLink{
         $this->addAtIndex($this->size, $val);
     }
 }
+
+$singly = new SinglyLink;
+$singly->addAtIndex(0, 1);
+$singly->addAtIndex(1, 2);
+$singly->addAtIndex(2, 3);
+// var_dump($singly->get(1));
