@@ -13,7 +13,7 @@ Class SinglyLink{
     public function __construct()
     {
         $this->size = 0;
-        $this->head = null;
+        $this->head = new Node(0);
     }
 
      /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
