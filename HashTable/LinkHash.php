@@ -6,7 +6,7 @@
 //  开放地址法：每当有碰撞， 则根据我们探查的策略找到一个空的槽为止。
 //  双散列法：使用两个哈希函数计算散列值，选择碰撞更少的地址。
 
-Class HashSet{
+Class LinkHash{
     private $bucket = [];
     private int $keyRange;
 
