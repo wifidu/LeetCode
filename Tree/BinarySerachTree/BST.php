@@ -66,4 +66,46 @@ class BST
         }
         return new TreeNode($val);
     }
+    public function deleteRecursive(TreeNode $root, int $key)
+    {
+        if ($root == null) return null;
+
+        if ($key > $root->val) {
+            $root->right = $this->deleteRecursive($root->right, $key);
+        } else if ($key < $root->val) {
+            $root->left = $this->deleteRecursive($root->left, $key);
+        } else {
+            if ($root->left == null && $root->right == null) {
+                $root = null;
+            } else if ($root->right != null) {
+                $root->val = $this->successor($root);
+                $root->right = $this->deleteRecursive($root->right, $root->val);
+            } else {
+                $root->val = $this->predecessor($root);
+                $root->left = $this->deleteRecursive($root->left, $root->val);
+            }
+        }
+
+        return $root;
+    }
+
+    public function successor(TreeNode $root)
+    {
+        $root = $root->right;
+        while ($root->left != null) {
+            $root = $root->left;
+        }
+
+        return $root->val;
+    }
+
+    public function predecessor(TreeNode $root)
+    {
+        $root = $root->left;
+        while ($root->right != null) {
+            $root = $root->right;
+        }
+
+        return $root->val;
+    }
 }
