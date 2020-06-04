@@ -1,9 +1,8 @@
 <?php
 $a = log(0);
-$b = (double) -INF;
-$c = 1;
-$d = [];
-var_dump($a);
+$b = 2;
+$c = 5;
+$d = [1, 2, 3];
+var_dump($d[ 1.5 ]);
 
-var_dump(! $d);
 ?>
